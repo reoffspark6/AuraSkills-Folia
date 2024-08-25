@@ -191,6 +191,7 @@ public class FightingAbilities extends AbilityImpl {
         var task = new TaskRunnable() {
             @Override
             public void run() {
+                if(entity == null){ cancel(); return; }
                 if (!entity.isValid()) { // Stop if entity died/transformed
                     cancel();
                     return;

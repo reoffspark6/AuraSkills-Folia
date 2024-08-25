@@ -11,7 +11,7 @@ import dev.aurelium.auraskills.api.trait.Trait;
 import dev.aurelium.auraskills.api.trait.TraitModifier;
 import dev.aurelium.auraskills.api.trait.Traits;
 import org.bukkit.inventory.ItemStack;
-import org.spongepowered.configurate.ConfigurationNode;
+//import org.spongepowered.configurate.ConfigurationNode;
 
 import java.util.List;
 import java.util.Map;
@@ -199,8 +199,8 @@ public interface ItemManager {
     /**
      * Use {@link #parseItem(ConfigNode)}
      */
-    @Deprecated
-    ItemStack parseItem(ConfigurationNode config);
+    //@Deprecated
+    //ItemStack parseItem(ConfigurationNode config);
 
     /**
      * Parses a list of ItemStack from a ConfigurationNode if it has a materials list. Only the material
@@ -216,7 +216,7 @@ public interface ItemManager {
     /**
      * Use {@link #parseMultipleItems(ConfigNode)}
      */
-    @Deprecated
-    List<ItemStack> parseMultipleItems(ConfigurationNode config);
+    //@Deprecated
+    //List<ItemStack> parseMultipleItems(ConfigurationNode config);
 
 }

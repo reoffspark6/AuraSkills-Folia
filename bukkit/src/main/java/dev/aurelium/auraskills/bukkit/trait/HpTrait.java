@@ -155,7 +155,9 @@ public class HpTrait extends TraitImpl {
                 NamespacedKey modifierKey = new NamespacedKey(plugin, ATTRIBUTE_KEY);
                 attribute.addModifier(new AttributeModifier(modifierKey, modifier, Operation.ADD_NUMBER, EquipmentSlotGroup.ANY));
             } else {
-                attribute.addModifier(new AttributeModifier(ATTRIBUTE_ID, "skillsHealth", modifier, Operation.ADD_NUMBER));
+                //attribute.addModifier(new AttributeModifier(ATTRIBUTE_ID, "skillsHealth", modifier, Operation.ADD_NUMBER));
+                NamespacedKey modifierKey = new NamespacedKey(plugin, ATTRIBUTE_KEY);
+                attribute.addModifier(new AttributeModifier(modifierKey, modifier, Operation.ADD_NUMBER, EquipmentSlotGroup.ANY));
             }
             // Sets health to max if over max
             if (player.getHealth() > attribute.getValue()) {

@@ -88,7 +88,7 @@ public class LuckTrait extends TraitImpl {
             NamespacedKey key = new NamespacedKey(plugin, MODIFIER_KEY);
             attribute.addModifier(new AttributeModifier(key, luck, Operation.ADD_NUMBER, EquipmentSlotGroup.ANY));
         } else {
-            attribute.addModifier(new AttributeModifier(LEGACY_MODIFIER_ID, "AureliumSkills-Luck", luck, AttributeModifier.Operation.ADD_NUMBER));
+            //attribute.addModifier(new AttributeModifier(LEGACY_MODIFIER_ID, "AureliumSkills-Luck", luck, AttributeModifier.Operation.ADD_NUMBER));
         }
     }
 

@@ -14,6 +14,10 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
+import io.papermc.paper.threadedregions.scheduler.AsyncScheduler;
+import io.papermc.paper.threadedregions.scheduler.GlobalRegionScheduler;
+import io.papermc.paper.threadedregions.scheduler.ScheduledTask;
+
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
@@ -96,7 +100,8 @@ public class PlayerJoinQuit implements Listener {
 
     private void sendUpdateMessage(Player player) {
         // Use a delayed task to give time for permission plugins to load data
-        plugin.getServer().getScheduler().runTaskLater(plugin, () -> {
+        //plugin.getServer().getScheduler().runTaskLater(plugin, () -> {
+        plugin.getServer().getGlobalRegionScheduler().runDelayed(plugin, task -> { 
             if (!plugin.configBoolean(Option.CHECK_FOR_UPDATES)) {
                 return;
             }
@@ -104,13 +109,13 @@ public class PlayerJoinQuit implements Listener {
                 return;
             }
             // Check for updates
-            UpdateChecker updateChecker = new UpdateChecker(plugin, plugin.getResourceId());
+            /*UpdateChecker updateChecker = new UpdateChecker(plugin, plugin.getResourceId());
             updateChecker.getVersion(version -> {
                 if (updateChecker.isOutdated(plugin.getDescription().getVersion(), version)) {
                     player.sendMessage(plugin.getPrefix(plugin.getDefaultLanguage()) + ChatColor.WHITE + "New update available! You are on version " + ChatColor.AQUA + plugin.getDescription().getVersion() + ChatColor.WHITE + ", latest version is " + ChatColor.AQUA + version);
                     player.sendMessage(plugin.getPrefix(plugin.getDefaultLanguage()) + ChatColor.WHITE + "Download it on Spigot: " + ChatColor.YELLOW + "" + ChatColor.UNDERLINE + "https://spigotmc.org/resources/" + plugin.getResourceId());
                 }
-            });
+            });*/
         }, 40L);
     }
 

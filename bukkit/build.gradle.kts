@@ -2,6 +2,7 @@ import org.gradle.api.tasks.Copy
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
 plugins {
+    java
     `java-library`
     id("com.github.johnrengelman.shadow") version "7.1.2"
     id("io.papermc.hangar-publish-plugin") version "0.1.2"
@@ -36,6 +37,7 @@ dependencies {
     implementation("net.kyori:adventure-text-minimessage:4.16.0")
     implementation("net.kyori:adventure-platform-bukkit:4.3.3")
     compileOnly("org.jetbrains:annotations:24.1.0")
+    compileOnly("dev.folia:folia-api:1.21-R0.1-SNAPSHOT")
     compileOnly("org.spigotmc:spigot-api:1.21-R0.1-SNAPSHOT")
     compileOnly("me.clip:placeholderapi:2.11.2")
     compileOnly("com.sk89q.worldguard:worldguard-bukkit:7.0.5") {
@@ -97,9 +99,6 @@ tasks {
 
     withType<JavaCompile> {
         options.encoding = "UTF-8"
-        options.compilerArgs.add("-parameters")
-        options.isFork = true
-        options.forkOptions.executable = "javac"
     }
 
     processResources {

@@ -149,11 +149,11 @@ public class ApiItemManager implements ItemManager {
         return itemParser.parseItem(((ApiConfigNode) config).getBacking());
     }
 
-    @Override
+    /*@Override
     @SuppressWarnings("deprecation")
     public ItemStack parseItem(ConfigurationNode config) {
         return itemParser.parseItem(config);
-    }
+    }*/
 
     @Override
     public List<ItemStack> parseMultipleItems(ConfigNode config) {
@@ -164,7 +164,7 @@ public class ApiItemManager implements ItemManager {
         }
     }
 
-    @Override
+    /*@Override
     @SuppressWarnings("deprecation")
     public List<ItemStack> parseMultipleItems(ConfigurationNode config) {
         try {
@@ -172,5 +172,5 @@ public class ApiItemManager implements ItemManager {
         } catch (SerializationException e) {
             throw new RuntimeException(e);
         }
-    }
+    }*/
 }

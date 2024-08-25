@@ -7,6 +7,7 @@ website: https://aurelium.dev/auraskills
 softdepend: [WorldGuard, PlaceholderAPI, HolographicDisplays, DecentHolograms, Vault, ProtocolLib, LuckPerms, Slimefun, Towny, MythicMobs, Oraxen]
 api-version: '1.13'
 prefix: AuraSkills
+folia-supported: true
 
 permissions:
     auraskills.command.skills:

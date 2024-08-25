@@ -53,7 +53,7 @@ public class LightningBlade extends ReadiedManaAbility {
             NamespacedKey key = new NamespacedKey(plugin, MODIFIER_KEY);
             attribute.addModifier(new AttributeModifier(key, addedValue, Operation.MULTIPLY_SCALAR_1, EquipmentSlotGroup.ANY));
         } else {
-            attribute.addModifier(new AttributeModifier(MODIFIER_ID, LEGACY_MODIFIER_NAME, addedValue, Operation.MULTIPLY_SCALAR_1));
+            //attribute.addModifier(new AttributeModifier(MODIFIER_ID, LEGACY_MODIFIER_NAME, addedValue, Operation.MULTIPLY_SCALAR_1));
         }
         // Play sound and send message
         player.playSound(player.getLocation(), Sound.ENTITY_ILLUSIONER_PREPARE_MIRROR, 0.5f, 1);

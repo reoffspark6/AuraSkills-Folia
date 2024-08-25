@@ -5,11 +5,16 @@ import dev.aurelium.auraskills.common.scheduler.TaskStatus;
 import org.bukkit.Bukkit;
 import org.bukkit.scheduler.BukkitTask;
 
+import io.papermc.paper.threadedregions.scheduler.AsyncScheduler;
+import io.papermc.paper.threadedregions.scheduler.GlobalRegionScheduler;
+import io.papermc.paper.threadedregions.scheduler.ScheduledTask;
+
 public class BukkitTaskWrapper implements Task {
 
-    private final BukkitTask bukkitTask;
+    //private final BukkitTask bukkitTask;
+    private final ScheduledTask bukkitTask;
 
-    public BukkitTaskWrapper(BukkitTask bukkitTask) {
+    public BukkitTaskWrapper(ScheduledTask bukkitTask) {
         this.bukkitTask = bukkitTask;
     }
 
@@ -24,6 +29,7 @@ public class BukkitTaskWrapper implements Task {
 
     @Override
     public void cancel() {
-        Bukkit.getScheduler().cancelTask(bukkitTask.getTaskId());
+        //Bukkit.getScheduler().cancelTask(bukkitTask.getTaskId());
+        bukkitTask.cancel();
     }
 }

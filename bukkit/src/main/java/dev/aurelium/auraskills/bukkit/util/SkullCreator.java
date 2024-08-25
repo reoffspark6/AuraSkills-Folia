@@ -242,7 +242,7 @@ public class SkullCreator {
         } catch (IllegalArgumentException e) {
             block.setType(Material.valueOf("SKULL"), false);
             Skull state = (Skull) block.getState();
-            state.setSkullType(SkullType.PLAYER);
+            //state.setSkullType(SkullType.PLAYER);
             state.update(false, false);
         }
     }

@@ -132,7 +132,9 @@ public class ArcheryAbilities extends AbilityImpl {
             NamespacedKey key = new NamespacedKey(plugin, STUN_KEY);
             modifier = new AttributeModifier(key, attributeValue, Operation.ADD_NUMBER, EquipmentSlotGroup.ANY);
         } else {
-            modifier = new AttributeModifier(LEGACY_STUN_ID, LEGACY_STUN_NAME, attributeValue, Operation.ADD_NUMBER);
+            //modifier = new AttributeModifier(LEGACY_STUN_ID, LEGACY_STUN_NAME, attributeValue, Operation.ADD_NUMBER);
+            NamespacedKey key = new NamespacedKey(plugin, STUN_KEY);
+            modifier = new AttributeModifier(key, attributeValue, Operation.ADD_NUMBER, EquipmentSlotGroup.ANY);
         }
         return modifier;
     }
